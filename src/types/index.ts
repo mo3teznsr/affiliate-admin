@@ -108,12 +108,12 @@ export type QueryOptionsType = {
 };
 
 export enum OrderStatus {
-  PENDING = 'order-pending',
+//  PENDING = 'order-pending',
   PROCESSING = 'order-processing',
   COMPLETED = 'order-completed',
   CANCELLED = 'order-cancelled',
   REFUNDED = 'order-refunded',
-  FAILED = 'order-failed',
+ // FAILED = 'order-failed',
   AT_LOCAL_FACILITY = 'order-at-local-facility',
   OUT_FOR_DELIVERY = 'order-out-for-delivery',
 }
