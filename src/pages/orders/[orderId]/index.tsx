@@ -228,7 +228,7 @@ export default function OrderDetailsPage() {
                   control={control}
                   getOptionLabel={(option: any) => t(option.name)}
                   getOptionValue={(option: any) => option.status}
-                  options={ORDER_STATUS.slice(0, 6)}
+                  options={ORDER_STATUS}
                   placeholder={t('form:input-placeholder-order-status')}
                 />
 
