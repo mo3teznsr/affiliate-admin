@@ -103,7 +103,7 @@ export default function Orders() {
 
     if (data) {
       const a = document.createElement('a');
-      a.href = data.replaceAll(".com",'.com/api');
+      a.href = data.replaceAll(".com",'.com/api1');
       a.setAttribute('download', 'export-order');
       a.click();
     }

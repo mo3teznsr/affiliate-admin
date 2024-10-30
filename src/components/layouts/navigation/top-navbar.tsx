@@ -133,7 +133,7 @@ const Navbar = () => {
             <motion.button
               whileTap={{ scale: 0.88 }}
               onClick={toggleSidebar}
-              className="group flex h-5 w-5 shrink-0 cursor-pointer flex-col justify-center space-y-1 me-4 focus:text-accent focus:outline-none lg:hidden"
+              className="group print:hidden flex h-5 w-5 shrink-0 cursor-pointer flex-col justify-center space-y-1 me-4 focus:text-accent focus:outline-none lg:hidden"
             >
               <span
                 className={cn(
@@ -153,7 +153,7 @@ const Navbar = () => {
               <Logo />
             </div>
             <button
-              className="group hidden h-5 w-5 shrink-0 cursor-pointer flex-col justify-center space-y-1 me-6 lg:flex"
+              className="group hidden print:hidden h-5 w-5 shrink-0 cursor-pointer flex-col justify-center space-y-1 me-6 lg:flex"
               onClick={() => setMiniSidebar(!miniSidebar)}
             >
               <span
@@ -172,12 +172,12 @@ const Navbar = () => {
             </button>
           </div>
           <div
-            className="relative ml-auto mr-1.5 flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-200 bg-gray-50 py-4 text-gray-600 hover:border-transparent hover:border-gray-200 hover:bg-white hover:text-accent sm:mr-6 lg:hidden xl:hidden"
+            className="relative ml-auto print:hidden mr-1.5 flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-200 bg-gray-50 py-4 text-gray-600 hover:border-transparent hover:border-gray-200 hover:bg-white hover:text-accent sm:mr-6 lg:hidden xl:hidden"
             onClick={handleClick}
           >
-            <SearchIcon className="h-4 w-4" />
+            <SearchIcon className="h-4 w-4 print:hidden" />
           </div>
-          <div className="relative hidden w-full max-w-[710px] py-4 me-6 lg:block 2xl:me-auto">
+          <div className="relative hidden  print:hidden w-full max-w-[710px] py-4 me-6 lg:block 2xl:me-auto">
             <SearchBar />
           </div>
 

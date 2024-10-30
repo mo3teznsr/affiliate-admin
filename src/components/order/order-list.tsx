@@ -178,7 +178,7 @@ const OrderList = ({
         dayjs.extend(timezone);
         return (
           <span className="whitespace-nowrap">
-            {dayjs.utc(date).tz(dayjs.tz.guess()).fromNow()}
+            {dayjs(date).format('YYYY-MM-DD')}
           </span>
         );
       },

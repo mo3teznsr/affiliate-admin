@@ -135,14 +135,15 @@ export default function OrderDetailsPage() {
   if (error) return <ErrorMessage message={error.message} />;
 
   async function handleDownloadInvoice() {
-    const { data } = await refetch();
+    window.print();
+    // const { data } = await refetch();
 
-    if (data) {
-      const a = document.createElement('a');
-      a.href = data;
-      a.setAttribute('download', 'order-invoice');
-      a.click();
-    }
+    // if (data) {
+    //   const a = document.createElement('a');
+    //   a.href = data.replaceAll(".com",'.com/api1');
+    //   a.setAttribute('download', 'order-invoice');
+    //   a.click();
+    // }
   }
 
   const columns = [
@@ -200,14 +201,14 @@ export default function OrderDetailsPage() {
         <div className="flex w-full">
           <Button
             onClick={handleDownloadInvoice}
-            className="mb-5 bg-blue-500 ltr:ml-auto rtl:mr-auto"
+            className="mb-5 bg-blue-500 ltr:ml-auto rtl:mr-auto print:hidden"
           >
             <DownloadIcon className="h-4 w-4 me-3" />
             {t('common:text-download')} {t('common:text-invoice')}
           </Button>
         </div>
 
-        <div className="flex flex-col items-center lg:flex-row">
+        <div className="flex flex-col items-center lg:flex-row print:hidden">
           <h3 className="mb-8 w-full whitespace-nowrap text-center text-2xl font-semibold text-heading lg:mb-0 lg:w-1/3 lg:text-start">
             {t('form:input-label-order-id')} - {order?.tracking_number}
           </h3>
@@ -245,7 +246,7 @@ export default function OrderDetailsPage() {
           )}
         </div>
 
-        <div className="my-5 flex items-center justify-center lg:my-10">
+        <div className="my-5 print:hidden flex items-center justify-center lg:my-10">
           <OrderStatusProgressBox
             orderStatus={order?.order_status as OrderStatus}
             paymentStatus={order?.payment_status as PaymentStatus}

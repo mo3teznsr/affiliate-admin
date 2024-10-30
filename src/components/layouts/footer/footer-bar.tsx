@@ -14,7 +14,7 @@ const Footer: React.FC<IFooterProp> = ({ className }) => {
   const date = new Date();
 
   return (
-    <footer className="mt-auto bg-white shadow">
+    <footer className="mt-auto bg-white shadow print:hidden">
       <div className="mx-auto w-full">
         <div className="flex items-center justify-between bg-white px-5 py-6 md:px-8">
           <span className="text-sm text-body sm:text-center">
