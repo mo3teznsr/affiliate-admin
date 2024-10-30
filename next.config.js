@@ -10,7 +10,7 @@ const { i18n } = require('./next-i18next.config');
 // });
 
 const nextConfig = {
- // basePath: '/omadmin',
+  basePath: '/omadmin',
   reactStrictMode: true,
   i18n,
 productionBrowserSourceMaps: false,
