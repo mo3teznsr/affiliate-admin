@@ -13,8 +13,9 @@ export const ORDER_STATUS = [
     status: 'order-out-for-delivery',
     serial: 4,
   },
-  { name: 'text-order-completed', status: 'order-completed', serial: 5 },
   { name: 'text-order-cancelled', status: 'order-cancelled', serial: 5 },
+  { name: 'text-order-completed', status: 'order-completed', serial: 5 },
+  
   { name: 'text-order-refunded', status: 'order-refunded', serial: 5 },
 //  { name: 'text-order-failed', status: 'order-failed', serial: 5 },
 ];
@@ -25,12 +26,12 @@ export const filterOrderStatus = (
   currentStatusIndex: number
 ) => {
   if ([PaymentStatus.SUCCESS, PaymentStatus.COD].includes(paymentStatus)) {
-    return currentStatusIndex > 4
+    return  currentStatusIndex==4?orderStatus.filter((o) => o.status !== 'order-cancelled').slice(0, 4):currentStatusIndex > 4
       ? [...orderStatus.slice(0, 4), orderStatus[currentStatusIndex]]
       : orderStatus.slice(0, 5);
   }
 
-  return currentStatusIndex > 4
+  return currentStatusIndex==4?orderStatus.filter((o) => o.status !== 'order-cancelled').slice(0, 4): currentStatusIndex > 4
     ? [...orderStatus.slice(0, 2), orderStatus[currentStatusIndex]]
     : orderStatus.slice(0, 5);
 };

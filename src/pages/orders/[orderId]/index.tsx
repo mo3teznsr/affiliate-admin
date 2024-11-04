@@ -33,6 +33,7 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useFormatPhoneNumber } from '@/utils/format-phone-number';
 import { useShopQuery } from '@/data/shop';
+import Avatar from '@/components/common/avatar';
 
 type FormValues = {
   order_status: any;
@@ -191,13 +192,15 @@ export default function OrderDetailsPage() {
       },
     },
   ];
-
+console.log({order})
   return (
     <>
       <Card className="relative overflow-hidden">
+
         <div className="mb-6 -mt-5 -ml-5 -mr-5 md:-mr-8 md:-ml-8 md:-mt-8">
           <OrderViewHeader order={order} wrapperClassName="px-8 py-4" />
         </div>
+        <div className='mb-3 '>{t('common:affiliate')} : <Avatar name={order?.customer?.name} /> {order?.customer?.name} </div>
         <div className="flex w-full">
           <Button
             onClick={handleDownloadInvoice}
@@ -217,6 +220,7 @@ export default function OrderDetailsPage() {
             OrderStatus.FAILED,
             OrderStatus.CANCELLED,
             OrderStatus.REFUNDED,
+            OrderStatus.COMPLETED,
           ].includes(order?.order_status! as OrderStatus) && (
             <form
               onSubmit={handleSubmit(ChangeStatus)}
