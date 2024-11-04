@@ -200,7 +200,7 @@ console.log({order})
         <div className="mb-6 -mt-5 -ml-5 -mr-5 md:-mr-8 md:-ml-8 md:-mt-8">
           <OrderViewHeader order={order} wrapperClassName="px-8 py-4" />
         </div>
-        <div className='mb-3 '>{t('common:affiliate')} : <Avatar name={order?.customer?.name||''} src={order?.customer?.profile?.avatar?.thumbnail??siteSettings?.avatar?.placeholder} /> {order?.customer?.name} </div>
+        <div className='mb-3 flex gap-2 items-center'><div>{ t('common:affiliate')} :</div> <Avatar name={order?.customer?.name||''} src={order?.customer?.profile?.avatar?.thumbnail??siteSettings?.avatar?.placeholder} /><div> {order?.customer?.name}</div> </div>
         <div className="flex w-full">
           <Button
             onClick={handleDownloadInvoice}
